@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "8fc9435e-bb5a-4885-8e7e-98fb3d0d8ba9",
+		"name": "Green API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38847867"
+	},
+	"item": [
+		{
+			"name": "SendMessage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"chatId\": \"77712717305@c.us\",\r\n  \"message\": \"Привет, это тестовое сообщение\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiUrl}}/waInstance{{idInstance}}/sendMessage/{{apiTokenInstance}}",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"waInstance{{idInstance}}",
+						"sendMessage",
+						"{{apiTokenInstance}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetChatHistory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"chatId\": \"77712717305@c.us\",\r\n    \"count\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiUrl}}/waInstance{{idInstance}}/getChatHistory/{{apiTokenInstance}}",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"waInstance{{idInstance}}",
+						"getChatHistory",
+						"{{apiTokenInstance}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "28a0b9f32a064bd59031e2ccd40f10ec7e214b02c30a464e96",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "https://7105.api.greenapi.com",
+			"type": "string"
+		},
+		{
+			"key": "idInstance",
+			"value": "7105215611",
+			"type": "string"
+		},
+		{
+			"key": "apiTokenInstance",
+			"value": "28a0b9f32a064bd59031e2ccd40f10ec7e214b02c30a464e96",
+			"type": "string"
+		}
+	]
+}
